@@ -69,6 +69,7 @@ console.log('isEmptyString("Hello")', isEmptyString("Hello")); // Виведе: 
 function checkDataType(value) {
   const dataType = typeof value;
   console.log(`Значення "${value}" має тип "${dataType}".`);
+  return dataType;
 }
 
 // Приклади виклику функції
