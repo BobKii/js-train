@@ -88,7 +88,7 @@ function concatenateStrings(array, subString) {
 }
 
 console.log("Завдання 8 ====================================");
-concatenateStrings([1, "two", 3, "four", 5], "two"); // Виведе "1,two,3,four,5"
+concatenateStrings([1, "two", 3, "four", 5], "two"); // Виведе true
 
 // Завдання 9: Функція приймає масив чисел.
 // За допомогою циклу for-in переберіть масив, додайте до кожного елемента 10.
