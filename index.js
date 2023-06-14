@@ -13,7 +13,12 @@ let personLarge = {
 };
 
 console.log("Завдання 2 ====================================");
-console.log("personLarge", personLarge); // Виведе {name: "John", age: 25}
+console.log("personLarge", personLarge); // Виведе
+// personLarge {
+//   name: 'John',
+//   age: 25,
+//   address: { street: '123 Main St', city: 'New York', country: 'USA' }
+// }
 
 //Завдання 3: Створіть функцію, що повертає новий об'єкт з тими ж властивостями, що й переданий у якості аргумента об'єкт.
 
