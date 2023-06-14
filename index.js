@@ -116,7 +116,7 @@ console.log("Завдання 7 ====================================");
 console.log(
   'encodeURLComponent("Hello World!")',
   encodeURLComponent("Hello World!")
-); // Виведе "Hello%20World%21"
+); // Виведе "Hello%20World!"
 
 // Задача 8: Напишіть функцію, яка кодує URL.
 
