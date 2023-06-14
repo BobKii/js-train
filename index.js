@@ -53,16 +53,10 @@ console.log(
   isTooLarge(Number.MAX_VALUE * 2)
 ); // Виведе true
 
-// Задача 6: Напишіть функцію, яка перевіряє, чи є число надто малим для представлення в JavaScript
-
-function isTooSmall(num) {
-  // Перевіряємо, чи є число більшим за 0, але меншим за MIN_VALUE
-}
-
-// Задача 6: Напишіть функцію, яка перевіряє, чи є число більше 0, але все ще більшим за Number.MIN_VALUE
+// Задача 6: Напишіть функцію, яка перевіряє, чи є число меншим чим  найменше можливе числове значення в JavaScript
 
 function isAlmostZero(num) {
-  // Перевіряємо, чи є число більше 0, але все ще більшим за Number.MIN_VALUE
+  // Перевіряємо, чи є число більше 0, але все ще менше за Number.MIN_VALUE
 }
 
 console.log("Завдання 6 ====================================");
@@ -70,7 +64,13 @@ console.log(
   "isAlmostZero(Number.MIN_VALUE / 2)",
   isAlmostZero(Number.MIN_VALUE / 2)
 ); // Виведе false
-console.log("isAlmostZero(Number.MIN_VALUE)", isAlmostZero(Number.MIN_VALUE)); // Виведе true
+console.log("isAlmostZero(Number.MIN_VALUE)", isAlmostZero(Number.MIN_VALUE)); // Виведе false
+
+// Задача 7: Напишіть функцію, яка перевіряє, чи є значення цілим числом
+
+function checkIsInteger(num) {
+  // Використовуємо вбудовану функцію Number.isInteger(), щоб перевірити, чи є значення цілим числом
+}
 
 console.log("Завдання 7 ====================================");
 console.log("checkIsInteger(42.5)", checkIsInteger(42.5)); // Виведе false
