@@ -7,30 +7,27 @@ console.log("Завдання 1 ====================================");
 console.log(createSymbol()); // Виведе Symbol()
 
 //Завдання 2: Функція для створення символу з описом та виведення опису
-function createSymbolWithDescription() {
-  // Створюємо символ symbol з описом 'My symbol'
+function createSymbolWithDescription(property) {
+  // Створюємо символ symbol з описом property
   //Повертаємо опис символа symbol
 }
 
 console.log("Завдання 2 ====================================");
-console.log(createSymbolWithDescription()); // Виведе My symbol
+console.log(createSymbolWithDescription("My symbol")); // Виведе My symbol
 
 // Завдання 3: Створення властивостей об'єкту з використанням Symbol
 // В даному завданні ми створимо властивість об'єкту, ключ якої буде символом.
 
 // Створимо функцію, яка створює об'єкт з властивістю, ключ якої є символом
-function createSymbolProperty() {
-  // Створимо змінну sym яка дорівнює символу з описом "property"
+function createSymbolProperty(property) {
+  // Створимо змінну sym яка дорівнює символу без опису
   // Створимо пустий об'єкт
-  // Додамо властивість до об'єкту, ключем якої буде наш символ, а значенням буде рядок Це властивість об'єкту з використанням символу
+  // Додамо властивість до об'єкту, ключем якої буде наш символ, а значенням буде аргумент property
   // Повертаємо об'єкт
 }
 
 console.log("Завдання 3 ====================================");
-console.log(createSymbolProperty()); //Виведе
-// {
-//   [Symbol(property)]: "Це властивість об'єкту з використанням символу"
-// }
+console.log(createSymbolProperty()); //Виведе { [Symbol()]: "Це властивість об'єкту з використанням символу" }
 
 // Завдання 4. Перевіримо чи є символи унікальними
 // Функція для створення двох символів з однаковим описом та порівнянням
@@ -73,22 +70,7 @@ console.log("Завдання 6 ====================================");
 let symbolForKey = Symbol.for("myKey"); // Створюємо новий символ або отримуємо існуючий з глобального реєстру символів
 console.log(getSymbolKey(symbolForKey)); // Виводимо ключ символу. Виведе: myKey
 
-// Завдання 7: Використання Symbol.isConcatSpreadable
-
-// Функція useIsConcatSpreadable використовує властивість Symbol.isConcatSpreadable для вказівки, чи масив розкривається під час конкатенації.
-
-function useIsConcatSpreadable() {
-  // Створюємо перший масив array1 зі значеннями 1, 2, 3.
-  // Створюємо другий масив array2 зі значеннями 4, 5, 6.
-  // Встановлюємо властивість Symbol.isConcatSpreadable для масиву array2 в значення false.
-  // Використовуємо метод concat для об'єднання масивів array1 і array2.
-  // Повертаємо результат конкатенації.
-}
-
-console.log("Завдання 7 ====================================");
-console.log(useIsConcatSpreadable()); // Виведе [ 1, 2, 3, [ 4, 5, 6, [Symbol(Symbol.isConcatSpreadable)]: false ] ]
-
-// Завдання 8: Використання Symbol.toString
+// Завдання 7: Використання Symbol.toString
 
 function useSymbolToStringTag() {
   // Створюємо пустий об'єкт myObject.
@@ -96,10 +78,10 @@ function useSymbolToStringTag() {
   // Повертаємо рядкове представлення myObject[Symbol].
 }
 
-console.log("Завдання 8 ====================================");
+console.log("Завдання 7 ====================================");
 console.log(useSymbolToStringTag()); //Виведе CustomObject
 
-// Завдання 9: Використання Symbol.description
+// Завдання 8: Використання Symbol.description
 
 // Функція useSymbolDescription використовує властивість Symbol.description для отримання опису символу.
 
@@ -109,13 +91,13 @@ function useSymbolDescription() {
   // Повертаємо symbolDescription
 }
 
-console.log("Завдання 9 ====================================");
+console.log("Завдання 8 ====================================");
 console.log(useSymbolDescription()); //Виведе mySymbol
 
-// Завдання 10: Використання Symbol.iterator
+// Завдання 9: Використання Symbol.iterator
 
 // Об'єкт "myObject" представляє значення   from: 1, to: 7, які можна перебрати
-let myObject = {
+let rangeObject = {
   // Використовуємо Symbol.iterator для створення ітератора всередині об'єкта "myObject"
   // this.current присвоюємо this.from
   // Повертаємо this
@@ -127,13 +109,41 @@ let myObject = {
 };
 
 // Функція "useSymbolIterator" використовує ітератор для отримання значень об'єкта
-function useSymbolIterator() {
-  // Створюємо масив пустий масив result
-  // Проходимо крізь елементи об'єкта, використовуючи цикл "for...of"
+function useSymbolIterator(obj) {
+  // Проходимо крізь елементи об'єкта obj, використовуючи цикл "for...of"
   // Додаємо кожне значення до масиву "result"
   // Повертаємо масив зі значеннями
 }
 
+console.log("Завдання 9 ====================================");
+
+console.log(useSymbolIterator(rangeObject)); //Виведе [ 1, 2, 3, 4, 5, 6 ]
+
+// Завдання 10: Використання Symbol.iterator
+
+// Оголошення об'єкта "myObject" з властивістю "category"
+let myObject = {
+  //Cтворюємо масив category
+  category: [
+    { id: 1, name: "apple" }, // Об'єкт категорії з ідентифікатором 1 та назвою "apple"
+    { id: 2, name: "banana" }, // Об'єкт категорії з ідентифікатором 2 та назвою "banana"
+    { id: 3, name: "orange" }, // Об'єкт категорії з ідентифікатором 3 та назвою "orange"
+    { id: 4, name: "grape" }, // Об'єкт категорії з ідентифікатором 4 та назвою "grape"
+    { id: 5, name: "mango" }, // Об'єкт категорії з ідентифікатором 5 та назвою "mango"
+  ],
+  //Створюємо властивість currentIndex зі значенням 0, яка буде нашим лічильником в ітерації
+
+  // Оголошення методу Symbol.iterator для об'єкта "myObject"
+  //Повертаємо this
+
+  // Оголошення методу "next" для ітерації
+  // Створюємо логічний оператор який буде перевіряти чи властивість об'єкту currentIndex менша ніж довжина масиву category
+  //Створюємо змінну value якій присвоємо властивість name елемента масиву category з індексом currentIndex
+  // Збільшимо currentIndex на одиницю
+  // Повертаємо об'єкт з властивістю value значенням якої буде value,та прапорцем done: false
+  //Якщо властивість об'єкту currentIndex більше або дорівнює довжині масиву category повертаємо об'єкт з прапорцем done: true, коли ітерація закінчена
+};
+
 console.log("Завдання 10 ====================================");
 
-console.log(useSymbolIterator()); //Виведе [ 1, 2, 3, 4, 5, 6 ]
+console.log(useSymbolIterator(myObject)); //Виведе [ 'apple', 'banana', 'orange', 'grape', 'mango' ]
