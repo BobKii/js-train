@@ -101,7 +101,10 @@ function checkIfStartsWith(mainStr, subStr) {
 }
 
 console.log("Завдання 9 ====================================");
-console.log('checkIfStartsWith("Hello, world!", "Hello")'); // Виведе true
+console.log(
+  'checkIfStartsWith("Hello, world!", "Hello")',
+  checkIfStartsWith("Hello, world!", "Hello")
+); // Виведе true
 
 // Завдання 10: Напишіть функцію, яка перевіряє, чи закінчується рядок певним підрядком
 
