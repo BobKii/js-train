@@ -151,7 +151,7 @@ function padString(original, length, padWith, side) {
   // Якщо "start", використовуємо padStart
   // Використовуємо метод padStart(), щоб доповнити рядок string до певної довжини length, вставляючи символи padWith на початку
   // Якщо "end", використовуємо padEnd
-  // Використовуємо метод padStart(), щоб доповнити рядок string до певної довжини length, вставляючи символи padWith на в кінці
+  // Використовуємо метод padEnd(), щоб доповнити рядок string до певної довжини length, вставляючи символи padWith на в кінці
   // Якщо бік не вказано або вказано неправильно, повертаємо повідомлення "Error: side should be either 'start' or 'end'"
 }
 
