@@ -89,7 +89,7 @@ console.log(deleteProperty(movie, "director")); // Виведе { title: 'Incept
 let user = {
   name: "John",
   age: 25,
-  // Створюємо метод introduse, який за допомогою ключового слова this має повернути такий рядок
+  // Створюємо метод introduce, який за допомогою ключового слова this має повернути такий рядок
   // My name is John and I am 25 years old.
 };
 
@@ -162,7 +162,7 @@ let product = {
 // Функція для виводу деталей людини
 function printProductDetails(obj) {
   // Використовуємо деструктуризацію для отримання значень productName, price i також значень companyName, country вкладеного об'єкту manufacturer
-  // Виводимо productName, price, city та country на консоль
+  // Виводимо productName, price, companyName та country на консоль
 }
 
 console.log("Завдання 11 ====================================");
