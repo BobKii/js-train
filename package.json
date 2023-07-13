@@ -10,7 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/it-brains-ua/js-train.git"
+    "url": "git+https://github.com/it-brains-ua/js-train.git",
+    "1": "nodemon 1",
+    "2": "nodemon 2",
+    "3": "nodemon 3",
+    "4": "nodemon 4",
+    "5": "nodemon 5",
+    "6": "nodemon 6",
+    "7": "nodemon 7"
   },
   "author": "",
   "license": "ISC",
