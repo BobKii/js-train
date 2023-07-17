@@ -311,7 +311,7 @@ console.log(findLongestWord(["apple", "banana", "pineapple", "watermelon"])); //
 /**
 
 Функція findDuplicateElements приймає масив чисел і повертає новий масив, в якому лише дубльовані елементи.
-Використовується методи filter(), indexOf() та lastIndexOf() для реалізації.
+Використовується методи filter(), indexOf() для реалізації.
  arr - вхідний масив чисел.
 Повертає - duplicateElements - новий масив, в якому лише дубльовані елементи.
 */
