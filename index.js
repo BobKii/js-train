@@ -51,7 +51,7 @@ function hasProperty(obj, property) {
 
 console.log("Завдання 4 ====================================");
 console.log(hasProperty(fruit, "name")); // Виведе "Property name exists."
-console.log(hasProperty(fruit, "taste")); // Виведе "Property color does not exist."
+console.log(hasProperty(fruit, "taste")); // Виведе "Property taste does not exist."
 
 // Завдання 5: Створіть функцію, що отримує об'єкт і виводить на консоль всі його ключі та значення.
 let country = {
