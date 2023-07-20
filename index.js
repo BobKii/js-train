@@ -92,3 +92,6 @@ function useSymbolDescription() {
   // Отримуємо опис символу mySymbol в змінну symbolDescription за допомогою властивості description.
   // Повертаємо symbolDescription
 }
+
+console.log("Завдання 8 ====================================");
+console.log(useSymbolDescription()); //Виведе mySymbol
