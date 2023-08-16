@@ -28,7 +28,7 @@ console.log("Завдання 3 ====================================");
 
 // Створюємо екземпляри класів GreenTeaMaker та BlackTeaMaker.
 // const greenTeaMaker = new GreenTeaMaker();
-// greenTeaMaker.prepareTea();
+// greenTeaMaker.makeTea();
 
 // const blackTeaMaker = new BlackTeaMaker();
-// blackTeaMaker.prepareTea();
+// blackTeaMaker.makeTea();
