@@ -4,6 +4,11 @@
 function isEvenNumber(num) {
   // Перевірити, чи число num є парним
   // Повернути результат перевірки (true або false) як результат функції
+  if (num % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 console.log("Завдання 1 ====================================");
@@ -17,13 +22,23 @@ function calculateSum(n) {
   // Запустити цикл для змінної i від 1 до n
   // Додати поточне значення i до змінної sum
   // Повернути значення змінної sum
+  if (n > 0) {
+    let sum = 0;
+    let i = 1;
+    do {
+      sum += i;
+      i++;
+    } while (i <= n);
+    return sum;
+  }
 }
 
 console.log("Завдання 2 ====================================");
 console.log("calculateSum(5)", calculateSum(5)); // Виведе: 15
 console.log("calculateSum(10)", calculateSum(10)); // Виведе: 55
 
-// Задача 3: Напишіть функцію, яка перевіряє, чи є задане число простим(ділиться без остачі тільки на себе та на 1). Використовуйте цикл для перевірки ділення числа на всі можливі дільники.
+// Задача 3: Напишіть функцію, яка перевіряє, чи є задане число простим(ділиться без остачі тільки на себе та на 1).
+//Використовуйте цикл для перевірки ділення числа на всі можливі дільники.
 
 function isPrimeNumber(num) {
   // Якщо число num менше або дорівнює 1, то воно не є простим, тому повертаємо false
@@ -32,18 +47,39 @@ function isPrimeNumber(num) {
   // Перевіряємо, чи num ділиться націло на поточне значення i
   // Якщо так, то num не є простим, тому повертаємо false
   // Якщо під час циклу не знайдено дільників, то num є простим, тому повертаємо true
+
+  if (num <= 1) {
+    return false;
+  } else {
+    let i = 2;
+    do {
+      if (num % i === 0) {
+        return false;
+      } else {
+        return true;
+      }
+      i++;
+    } while (i <= num - 1);
+  }
 }
 
 console.log("Завдання 3 ====================================");
 console.log("isPrimeNumber(7)", isPrimeNumber(7)); // Виведе: true
 console.log("isPrimeNumber(10)", isPrimeNumber(10)); // Виведе: false
 
-// Задача 4: Напишіть функцію, яка перевіряє, чи є задане число додатним. Використовуйте умовний оператор для перевірки числа.
+// Задача 4: Напишіть функцію, яка перевіряє, чи є задане число додатним.
+//Використовуйте умовний оператор для перевірки числа.
 
 function isPositiveNumber(num) {
   // Перевіряємо, чи число num більше 0
   // Якщо так, то num є позитивним, тому повертаємо true
   // В іншому випадку, якщо num менше або дорівнює 0, то num не є позитивним, тому повертаємо false
+
+  if (num > 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 console.log("Завдання 4 ====================================");
@@ -56,6 +92,12 @@ function isEmptyString(str) {
   // Перевіряємо, чи рядок str дорівнює пустому рядку ('')
   // Якщо так, то str є порожнім рядком, тому повертаємо true
   // В іншому випадку, якщо str містить хоча б один символ, то str не є порожнім рядком, тому повертаємо false
+
+  if (str === "") {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 console.log("Завдання 5 ====================================");
@@ -69,6 +111,9 @@ function checkDataType(value) {
   // Отримуємо тип значення value за допомогою оператора typeof
   // Виводимо у консоль повідомлення, яке містить значення value та його тип
   // Повертаємо тип значення value
+  let typeValue = typeof value;
+  console.log(`Значення ${value} має тип данних ${typeValue}`);
+  return typeValue;
 }
 
 // Приклади виклику функції
@@ -84,6 +129,11 @@ function findMax(num1, num2) {
   // Порівнюємо num1 та num2
   // Якщо num1 більше num2, то num1 є максимальним, тому повертаємо num1
   // В іншому випадку (якщо num2 більше або дорівнює num1), то num2 є максимальним, тому повертаємо num2
+  if (num1 > num2) {
+    return num1;
+  } else {
+    return num2;
+  }
 }
 
 // Приклади виклику функції
@@ -101,6 +151,16 @@ function getUserStatus(age) {
   // Якщо age менше 18, то користувач є "Неповнолітнім"
   // Якщо age більше або дорівнює 18 і менше 65, то користувач є "Дорослим"
   // В іншому випадку (якщо age більше або дорівнює 65), то користувач є "Пенсіонером"
+
+  if (typeof age === "number") {
+    if (age < 18) {
+      return "Неповнолітній";
+    } else if (age >= 18 && age < 65) {
+      return "Дорослий";
+    } else if (age >= 65) {
+      return "Пенсіонер";
+    }
+  }
 }
 
 // Приклади виклику функції
@@ -124,6 +184,31 @@ function getDayOfWeek(dayNumber) {
   // Якщо dayNumber = 7, то day = "Неділя"
   // Якщо значення dayNumber не співпадає з жодним з випадків, то day = "Невірний номер дня"
   // Повертаємо назву дня тижня, яку зберегли у змінній day
+
+  switch (dayNumber) {
+    case 1:
+      return "Понеділок";
+
+    case 2:
+      return "Вівторок";
+
+    case 3:
+      return "Середа";
+
+    case 4:
+      return "Четвер";
+
+    case 5:
+      return "П'ятниця";
+
+    case 6:
+      return "Субота";
+
+    case 7:
+      return "Неділя";
+    default:
+      return "Невірний номер дня";
+  }
 }
 
 // Приклади виклику функції
@@ -143,6 +228,22 @@ function getVariableType(variable) {
   // Якщо тип змінної - boolean, то повідомлення = "Це булеве значення"
   // В іншому випадку (якщо тип змінної не входить у попередні категорії), то повідомлення = "Це інший тип"
   // Повертаємо встановлене повідомлення як результат функції
+
+  let typeVariable = typeof variable;
+
+  switch (typeVariable) {
+    case "number":
+      return "Це число";
+      break;
+    case "string":
+      return "Це рядок";
+      break;
+    case "boolean":
+      return "Це булеве значення";
+      break;
+    default:
+      return "Це інший тип";
+  }
 }
 
 // Приклади виклику функції
@@ -158,27 +259,39 @@ console.log("getVariableType([1, 2, 3])", getVariableType([1, 2, 3])); // Вив
 function factorial(n) {
   // Якщо n дорівнює 0 або 1, повертаємо 1, оскільки факторіал 0 і 1 завжди дорівнює 1.
   // Якщо n більше за 1, ми множимо n на результат виклику тієї самої функції з n-1.
+  if (n === 0 || n === 1) {
+    return 1;
+  } else if (n > 1) {
+    return n * factorial(n - 1);
+  }
 }
 
 console.log("Завдання 11 ====================================");
 console.log("factorial(5)", factorial(5)); // Виведе: 120
 console.log("factorial(10)", factorial(10)); // Виведе: 3628800
 
-// Задача 12: створити функцію `makeAdder`, яка приймає число `x` і повертає нову функцію, що приймає число `y` і повертає суму `x` та `y`.
+// Задача 12: створити функцію `makeAdder`, яка приймає число `x` і повертає нову функцію,
+// що приймає число `y` і повертає суму `x` та `y`.
 function makeAdder(x) {
   // Вертаємо нову функцію, яка приймає `y`
   // Сумуємо `x` та `y` і повертаємо результат
+  return (y) => {
+    return x + y;
+  };
 }
 
 // Створюємо змінну getAdder якій присвоємо результат виконання функції makeAdder з аргументом 5
 
+let getAdder = makeAdder(5);
+
 console.log("Завдання 12 ====================================");
 // Розкоментуйте після виконаня завдання
-// console.log("getAdder(10)", getAdder(10)); // Виведе: 15
-// console.log("makeAdder(5)(10)", makeAdder(5)(10)); // Виведе: 15
+console.log("getAdder(10)", getAdder(10)); // Виведе: 15
+console.log("makeAdder(5)(10)", makeAdder(5)(10)); // Виведе: 15
 
 // Задача 13: Задача: створити стрілкову функцію, яка приймає два числа і повертає їх добуток.
 let multiply = (x, y) => {
+  return x * y;
   // Повертаємо добуток x та y
 };
 
@@ -190,43 +303,70 @@ console.log("multiply(5, 3)", multiply(5, 3)); // Виведе: 15
 function divide(x) {
   // Повертаємо нову функцію, яка приймає `y`
   // Ділимо `x` на `y` і повертаємо результат
+  return (y) => {
+    return x / y;
+  };
 }
 
 // Створюємо змінну getDivider якій присвоємо результат виконання функції divide з аргументом 2
 
+let getDivider = divide(2);
+
 console.log("Завдання 14 ====================================");
 // Розкоментуйте після виконаня завдання
-// console.log("getDivider(10)", getDivider(10)); // Виведе: 0.2
-// console.log("divide(2)(10)", divide(2)(10)); // Виведе: 0.2
+console.log("getDivider(10)", getDivider(10)); // Виведе: 0.2
+console.log("divide(2)(10)", divide(2)(10)); // Виведе: 0.2
 
 // Задача 15: Створити мемоізовану версію функції, яка обчислює площу квадрата на основі довжини його сторони.
 
 function memoizedArea() {
   // Ініціалізуємо примітивні змінні для зберігання попереднього аргументу та результату
+  let prevSide = null;
+  let prevResult = null;
   // Повертаємо функцію яка приймає аргумент side - сторону квадрата
   // Перевіряємо, чи є введена сторона такою ж, як і в попередньому виклику
   // Виводимо повідомлення Fetching from cache
   // Повертаємо попереднє значення
-  // Якщо сторона відрізняється від попередньої, обчислюємо площу та зберігаємо результат та аргумент для майбутнього використання
+  return (side) => {
+    if (side === prevSide) {
+      console.log("Fetching from cache");
+      return prevResult;
+    } else {
+      const result = side ** 2;
+      console.log("Calculating result");
+      prevSide = side;
+      prevResult = result;
+      return prevResult;
+    }
+  };
+  // Якщо сторона відрізняється від попередньої,
+  //обчислюємо площу та зберігаємо результат та аргумент для майбутнього використання
+  //// const result = side ** 2;
   // Виводимо повідомлення Calculating result
+  //// console.log("Calculating result");
   // Розраховуємо площу
   // prevSide присвоюємо сторону квадрата
   // prevResult просвоюємо площу квадрата
+  //// prevSide = side;
+  //// prevResult = result;
   // Повертаємо площу
+  //// return result;
 }
 
 //Створюємо змінну squareArea якій присвоємо результат виконання функції memoizedArea
+const squareArea = memoizedArea();
 
 console.log("Завдання 15 ====================================");
 // Розкоментуйте після виконаня завдання
-// console.log("squareArea(5)", squareArea(5)); // Обчислює і виводить 25
-// console.log("squareArea(5)", squareArea(5)); // Виводить "Fetching from cache" і виводить 25 з кешу
-// console.log("squareArea(6)", squareArea(6)); // Обчислює і виводить 36
-// console.log("squareArea(6)", squareArea(6)); // Виводить "Fetching from cache" і виводить 36 з кешу
+console.log("squareArea(5)", squareArea(5)); // Обчислює і виводить 25
+console.log("squareArea(5)", squareArea(5)); // Виводить "Fetching from cache" і виводить 25 з кешу
+console.log("squareArea(6)", squareArea(6)); // Обчислює і виводить 36
+console.log("squareArea(6)", squareArea(6)); // Виводить "Fetching from cache" і виводить 36 з кешу
 
 // Задача 16: Задача: створити функціональний вираз для обчислення кубу числа.
 let cube = function (n) {
   // Повертаємо n в кубі
+  return n ** 3;
 };
 
 console.log("Завдання 16 ====================================");
@@ -235,18 +375,25 @@ console.log("cube(3)", cube(3)); // Виведе: 27
 // Задача 17: створити дві функції, одна з яких збільшує число на 1, а інша - множить число на 2, а потім створити композицію цих функцій.
 function increment(n) {
   // Повертаємо n + 1
+  return ++n;
 }
 
 function double(n) {
   // Повертаємо n*2
-}
-
-function compose(func1, func2) {
-  // Повертаємо нову функцію, яка приймає аргумент n
-  // Повертаємо func2, в яку передаємо func1 з аргументом n
+  return n * 2;
 }
 
 // Створюємо змінну createCompose якій присвоємо результат виконання функції compose з аргументами increment та double
+
+const createCompose = (n) => {
+  return double(increment(n));
+};
+
 console.log("Завдання 17 ====================================");
 // Розкоментуйте після виконаня завдання
-// console.log("createCompose(5)", createCompose(5)); // Виведе: 12 (5+1=6, 6*2=12)
+console.log("createCompose(5)", createCompose(5)); // Виведе: 12 (5+1=6, 6*2=12)
+
+//---------------------------------------------------------------------------
+
+console.log("double(5)", double(5));
+console.log("increment(5)", increment(5));
