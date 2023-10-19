@@ -524,22 +524,21 @@ function customIncludes(arr, element) {
   // За допомогою методу filter перевіряємо скільки разів в масиві зустрічається елемент та виводимо число в консоль
   //Повертаємо результат
   // console.log(element);
-  if (Array.isArray(arr)) {
-    if (arr.includes(element)) {
-      let result = arr.filter(checkFn, element);
-      console.log(result, arr.includes(element));
-    }
+  // Перевіряємо, чи вхідний параметр є масивом
+  if (!Array.isArray(arr)) {
+    console.log("Помилка: Вхідний параметр має бути масивом.");
+    return false;
   }
-}
+  // Використовуємо метод includes для перевірки наявності елемента в масиві
+  const result = arr.includes(element);
 
-let checkFn = (value, index, arr, element) => {
-  let i = 0;
-  // console.log(value);
-  if (value === "banana") {
-    i = i + 1;
-  }
-  return i;
-};
+  // За допомогою методу filter перевіряємо скільки разів в масиві зустрічається елемент та виводимо число в консоль
+  const count = arr.filter((item) => item === element).length;
+  console.log(count);
+
+  //Повертаємо результат
+  return result;
+}
 
 console.log("Завдання: 17 ==============================");
 console.log(customIncludes(["apple", "banana", "orange", "apple"], "banana"));
