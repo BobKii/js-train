@@ -2,18 +2,21 @@ console.log("Завдання: 5 ==============================");
 
 // Створюємо функцію task5, яка буде використовувати проміси.
 function task5() {
-  // Створюємо змінну counter яка буде лічильником та присвоюємо значення 0
+  // Створюємо змінну counter яка буде лічильником та
+  // присвоюємо значення 0
   let counter = 0;
   let mySetInterval = null;
+
   // Створюємо проміс з іменем intervalPromise.
   let intervalPromise = new Promise((resolve, reject) => {
     mySetInterval = setInterval(
-      () => resolve("Проміс 2 виконано"),
+      (counter) => resolve(` ${counter} "Проміс 2 виконано"`),
       1000,
-      counter
+      counter++
     );
     counter++;
     console.log(`Значення лічильника: ${counter}`);
+    console.log(typeof counter);
     if (counter === 5) {
       clearInterval(mySetInterval);
       console.log(`Значення лічильника: 5`);
